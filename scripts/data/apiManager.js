@@ -67,7 +67,9 @@ export const getSnacks = () => {
 		})
 }
 
+// this allows the fetch call to not only grab the tabel from the data base named
+// snacks but to also grab the tables named shape,type,inFlavor, ect.
 export const getSingleSnack = (snackId) => {
-	return fetch(`${apiURL}/snacks/${snackId}`)
+	return fetch(`${apiURL}/snacks/${snackId}?_expand=type&_expand=shape&_expand=inFlavor&_expand=season`)
 	.then(response => response.json())
 }
