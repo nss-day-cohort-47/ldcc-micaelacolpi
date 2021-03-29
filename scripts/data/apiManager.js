@@ -38,7 +38,7 @@ export const registerUser = (userObj) => {
 		},
 		body: JSON.stringify(userObj)
 	})
-		.then(response => response.json())
+	.then(response => response.json())
 		.then(parsedUser => {
 			setLoggedInUser(parsedUser);
 			return getLoggedInUser();
